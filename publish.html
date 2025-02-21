@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Movie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Upload Movie</h2>
+        <form id="movieForm">
+            <div class="mb-3">
+                <label for="imageInput" class="form-label">Upload Image</label>
+                <input type="file" class="form-control" id="imageInput" accept="image/*" required>
+            </div>
+            <div class="mb-3">
+                <label for="titleInput" class="form-label">Movie Name</label>
+                <input type="text" class="form-control" id="titleInput" placeholder="Enter movie title" required>
+            </div>
+            <div class="mb-3">
+                <label for="imdbInput" class="form-label">IMDb Rating</label>
+                <input type="number" class="form-control" id="imdbInput" step="0.1" min="0" max="10" placeholder="Enter IMDb rating (e.g., 8.5)" required>
+            </div>
+            <div class="mb-3">
+                <label for="yearInput" class="form-label">Release Year</label>
+                <input type="number" class="form-control" id="yearInput" min="1900" max="2100" placeholder="Enter release year (e.g., 2023)" required>
+            </div>
+            <div class="mb-3">
+                <label for="languageInput" class="form-label">Language</label>
+                <input type="text" class="form-control" id="languageInput" placeholder="Enter language (e.g., English)" required>
+            </div>
+            <div class="mb-3">
+                <label for="subtitleInput" class="form-label">Subtitle</label>
+                <input type="text" class="form-control" id="subtitleInput" placeholder="Enter subtitle language (e.g., Spanish, None)" required>
+            </div>
+            <div class="mb-3">
+                <label for="sizeInput" class="form-label">Size</label>
+                <input type="text" class="form-control" id="sizeInput" placeholder="Enter file size (e.g., 1.5GB)" required>
+            </div>
+            <div class="mb-3">
+                <label for="qualityInput" class="form-label">Quality</label>
+                <input type="text" class="form-control" id="qualityInput" placeholder="Enter video quality (e.g., HD, 4K)" required>
+            </div>
+            <div class="mb-3">
+                <label for="formatInput" class="form-label">Format</label>
+                <input type="text" class="form-control" id="formatInput" placeholder="Enter format (e.g., MP4, MKV)" required>
+            </div>
+            <div class="mb-3">
+                <label for="synopsisInput" class="form-label">Movie Synopsis</label>
+                <textarea class="form-control" id="synopsisInput" rows="3" placeholder="Enter movie synopsis" required></textarea>
+            </div>
+
+            <!-- Download Links Fields -->
+            <h4 class="mt-4">Download Links</h4>
+            <div class="mb-3">
+                <label for="download480pInput" class="form-label">Download (480p) [470MB]</label>
+                <input type="text" class="form-control" id="download480pInput" placeholder="Paste 480p link here" required>
+            </div>
+            <div class="mb-3">
+                <label for="download720pInput" class="form-label">Download (720p) [1.2GB]</label>
+                <input type="text" class="form-control" id="download720pInput" placeholder="Paste 720p link here" required>
+            </div>
+            <div class="mb-3">
+                <label for="download1080pInput" class="form-label">Download (1080p) [2.6GB]</label>
+                <input type="text" class="form-control" id="download1080pInput" placeholder="Paste 1080p link here" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+        <a href="index.html" class="btn btn-secondary mt-3">View Movies</a>
+        <button id="clearMovies" class="btn btn-warning mt-3">Clear All Movies</button>
+
+    </div>
+
+    <div class="container mt-5">
+        <h3>Uploaded Movies</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <!-- <th>IMDb</th>
+                    <th>Year</th>
+                    <th>Language</th>
+                    <th>Subtitle</th>
+                    <th>Size</th>
+                    <th>Quality</th>
+                    <th>Format</th>
+                    <th>Synopsis</th>
+                    <th>480p</th>
+                    <th>720p</th>
+                    <th>1080p</th> -->
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="movieTableBody">
+                <!-- Movie Entries Will Appear Here -->
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- here was also show the publish cards with deleate buttons -->
+
+    <!-- Bootstrap JS & Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
